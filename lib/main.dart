@@ -13,10 +13,12 @@ String? firstState;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp().then((value) {
+    // ignore: avoid_print
     print('Firebase Initial Success');
     firstState = '/authen';
     runApp(const MyApp());
   }).catchError((value) {
+    // ignore: avoid_print
     print('Cannot Firebase ${value.code}');
   });
 }
